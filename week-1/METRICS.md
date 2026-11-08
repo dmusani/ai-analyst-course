@@ -1,6 +1,6 @@
 # METRICS.md
 
-Draft definitions derived from `data/raw/trials.csv`. Confirm with the growth team before relying on them for reporting.
+Metric definitions for `data/raw/trials.csv`. **Status: approved by the growth team** (confirmed by the repo owner on 2026-11-08). Change a definition only with the growth team's agreement, and update this note when you do.
 
 ## Trial conversion rate
 
