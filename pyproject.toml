@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "ai-workflows-dependency-audit"
+name = "ai-analyst-course"
 version = "0.1.0"
 description = "Audit repo to validate AI workflows bootcamp dependency compatibility"
 authors = ["Future Proof Data Science"]
