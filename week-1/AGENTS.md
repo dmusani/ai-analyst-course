@@ -1,7 +1,7 @@
 # AGENTS.md
  
 ## Project overview
-Analysis of customer orders for the growth team. Raw data is in `data/`, notebooks in `notebooks/`, and reusable code in `src/`.
+Analysis of free-trial conversion for the growth team. Raw data is in `data/`, notebooks in `notebooks/`, and reusable code in `src/`.
  
 ## Commands
 - Install dependencies: `poetry install`
@@ -13,7 +13,8 @@ Analysis of customer orders for the growth team. Raw data is in `data/`, noteboo
 - Treat `data/raw/` as read-only. Write cleaned data to `data/processed/`.
 - `trials.csv` has one row per trial, and each `user_id` has at most one trial. `outcome` is `converted` or `canceled`. A null `outcome` and `outcome_at` means the trial is still open, so exclude open trials from conversion rates.
 - `orders.csv`, if present, has one row per order line, not per order. Count orders with `order_id`. `Total` refers to the invoice amount in US Dollars.
-- Never commit data files or anything in `outputs/`.
+- Read `METRICS.md` before computing any rate or other metric.
+- Never commit data files or anything in `outputs/`. The one exception is `data/raw/trials.csv`, which is approved for the repo. Do not commit `data/processed/`.
  
 ## Conventions
 - Put reusable logic in `src/`. Notebooks import from it instead of redefining it.
