@@ -1,1 +1,13 @@
 .DS_Store
+
+# Data and outputs (never commit)
+week-*/data/
+week-*/outputs/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.ruff_cache/
+.pytest_cache/
+.ipynb_checkpoints/
