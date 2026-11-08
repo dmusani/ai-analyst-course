@@ -11,7 +11,8 @@ Analysis of customer orders for the growth team. Raw data is in `data/`, noteboo
  
 ## Working with data
 - Treat `data/raw/` as read-only. Write cleaned data to `data/processed/`.
-- `orders.csv` has one row per order line, not per order. Count orders with `order_id`. `Total` refers to the invoice amount in US Dollars
+- `trials.csv` has one row per trial, and each `user_id` has at most one trial. `outcome` is `converted` or `canceled`. A null `outcome` and `outcome_at` means the trial is still open, so exclude open trials from conversion rates.
+- `orders.csv`, if present, has one row per order line, not per order. Count orders with `order_id`. `Total` refers to the invoice amount in US Dollars.
 - Never commit data files or anything in `outputs/`.
  
 ## Conventions
