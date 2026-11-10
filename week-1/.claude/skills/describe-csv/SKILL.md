@@ -10,10 +10,10 @@ Produce a concise profile of a CSV so the user knows what is in it before analys
 
 ## Input
 
-`$ARGUMENTS` is the CSV path, relative to the project root (for example `data/raw/trials.csv`).
+`$ARGUMENTS` is the CSV path, relative to the project root (for example `data/raw/example.csv`).
 
 - If empty, list the files in `data/raw/` and ask which one to describe.
-- If it is a bare filename (for example `trials.csv`), look for exactly one match under `data/` and use it, saying which path you used.
+- If it is a bare filename (for example `example.csv`), look for exactly one match under `data/` and use it, saying which path you used.
 - If the path does not exist, say so and list the CSV files nearby. Do not guess.
 
 ## Rules
@@ -44,11 +44,9 @@ Produce a concise profile of a CSV so the user knows what is in it before analys
    - Duplicated rows, and duplicated values in columns that look like IDs.
    - Mixed case or stray whitespace in categorical values.
 
-## Project-specific notes
+## Dataset-specific context
 
-- `trials.csv` has one row per trial, and each `user_id` has at most one trial. A null `outcome` and `outcome_at` means the trial is still open, not bad data. Say so when profiling it, and exclude open trials from any conversion rate.
-- `orders.csv`, if present, has one row per order line, not per order. Count orders with `order_id` (`nunique`), not with row count. `Total` is the invoice amount in US Dollars, so label it as USD.
-- Do not assume other files follow these rules. Only apply them to the columns that exist.
+This skill works on any CSV, so it holds no notes about particular datasets. If the project's `AGENTS.md` (or a data dictionary) describes the file being profiled, use it to interpret what you find, for example what one row represents or whether a missing value is expected. Say which note you relied on. Do not assume a note applies to a file it does not name.
 
 ## Output format
 
